@@ -1,5 +1,6 @@
 package com.armanfar.sbjdbcdemo.section5.repository;
 
+import com.armanfar.sbjdbcdemo.section5.model.Course;
 import com.armanfar.sbjdbcdemo.section5.model.Passport;
 import com.armanfar.sbjdbcdemo.section5.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,17 @@ public class StudentRepository {
         if(student != null) {
             em.remove(student);
         }
+    }
+
+    public void addCourse(Long studentId, Long courseId) {
+        Student student = em.find(Student.class, studentId);
+        Course course = em.find(Course.class, courseId);
+
+        em.persist(student);
+        em.persist(course);
+
+        student.addCourse(course);
+        course.addStudent(student);
+        em.persist(student);
     }
 }

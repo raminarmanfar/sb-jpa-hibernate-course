@@ -40,7 +40,8 @@ public class Section5DemoApplication implements CommandLineRunner {
         Student student = Student.builder().name("Milad").build();
         Passport passport = Passport.builder().number("M10000").build();
         studentRepository.save(student, passport);
-*/
+
         courseRepository.testTransactional();
+*/
     }
 }

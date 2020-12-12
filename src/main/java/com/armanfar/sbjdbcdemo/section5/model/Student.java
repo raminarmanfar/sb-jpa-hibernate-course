@@ -43,6 +43,10 @@ public class Student {
             inverseJoinColumns = @JoinColumn(name = "COURSE_ID"))
     private List<Course> courses;
 
+    public void addCourse(Course course) {
+        courses.add(course);
+    }
+
     @Override
     public String toString() {
         return "\n\t>> Student{" +

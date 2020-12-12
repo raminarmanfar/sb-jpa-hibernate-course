@@ -44,8 +44,8 @@ public class Course {
         reviews.add(review);
     }
 
-    public void removeReview(Review review) {
-        reviews.remove(review);
+    public void addStudent(Student student) {
+        students.add(student);
     }
 
     @Override
