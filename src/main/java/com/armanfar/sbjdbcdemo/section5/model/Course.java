@@ -1,8 +1,11 @@
 package com.armanfar.sbjdbcdemo.section5.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.annotations.Cache;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -18,6 +21,7 @@ import java.util.List;
         @NamedQuery(name = "find_all_courses", query = "select c from Course c"),
         @NamedQuery(name = "find_all_courses_100_steps", query = "select c from Course c where c.name like '%100 Steps'")
 })
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Course {
     @Id
     @GeneratedValue
@@ -38,6 +42,7 @@ public class Course {
     private List<Review> reviews;
 
     @ManyToMany(mappedBy = "courses")
+    @JsonIgnore
     private List<Student> students;
 
     public void addReview(Review review) {

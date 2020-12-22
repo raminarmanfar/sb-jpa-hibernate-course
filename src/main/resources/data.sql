@@ -15,11 +15,13 @@ INSERT INTO course (id, name, last_updated_date, created_date) VALUES(10001, 'Ma
 INSERT INTO course (id, name, last_updated_date, created_date) VALUES(10002, 'C++ in 100 Steps', sysdate(), sysdate());
 INSERT INTO course (id, name, last_updated_date, created_date) VALUES(10003, 'Python in 56 Steps', sysdate(), sysdate());
 INSERT INTO course (id, name, last_updated_date, created_date) VALUES(10004, 'Angular in 100 Steps', sysdate(), sysdate());
+INSERT INTO course (id, name, last_updated_date, created_date) VALUES(10005, 'Machine Learning in 100 Steps', sysdate(), sysdate());
+INSERT INTO course (id, name, last_updated_date, created_date) VALUES(10006, 'ASP.NET in 60 Steps', sysdate(), sysdate());
 
 INSERT INTO passport (id, number, last_updated_date, created_date) VALUES(40001, 'R123456', sysdate(), sysdate());
-INSERT INTO passport (id, number, last_updated_date, created_date) VALUES(40002, 'A123456', sysdate(), sysdate());
-INSERT INTO passport (id, number, last_updated_date, created_date) VALUES(40003, 'S123456', sysdate(), sysdate());
-INSERT INTO passport (id, number, last_updated_date, created_date) VALUES(40004, 'Y123456', sysdate(), sysdate());
+INSERT INTO passport (id, number, last_updated_date, created_date) VALUES(40002, 'A129654', sysdate(), sysdate());
+INSERT INTO passport (id, number, last_updated_date, created_date) VALUES(40003, 'S912345', sysdate(), sysdate());
+INSERT INTO passport (id, number, last_updated_date, created_date) VALUES(40004, 'Y221834', sysdate(), sysdate());
 
 -- SELECT student.id, student.name, student.passport_id, passport.number FROM STUDENT INNER JOIN passport on passport.id = student.passport_id
 INSERT INTO student (id, name, passport_id, last_updated_date, created_date) VALUES(20001, 'Ramin', 40001, sysdate(), sysdate());
@@ -38,8 +40,8 @@ INSERT INTO student_course(student_id, course_id) VALUES (20001, 10001);
 INSERT INTO student_course(student_id, course_id) VALUES (20001, 10002);
 INSERT INTO student_course(student_id, course_id) VALUES (20001, 10004);
 INSERT INTO student_course(student_id, course_id) VALUES (20002, 10002);
-INSERT INTO student_course(student_id, course_id) VALUES (20002, 10003);
+INSERT INTO student_course(student_id, course_id) VALUES (20002, 10006);
 INSERT INTO student_course(student_id, course_id) VALUES (20002, 10004);
-INSERT INTO student_course(student_id, course_id) VALUES (20003, 10003);
+INSERT INTO student_course(student_id, course_id) VALUES (20003, 10006);
 INSERT INTO student_course(student_id, course_id) VALUES (20003, 10004);
-INSERT INTO student_course(student_id, course_id) VALUES (20004, 10001);
+INSERT INTO student_course(student_id, course_id) VALUES (20004, 10006);
